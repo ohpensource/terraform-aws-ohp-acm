@@ -12,7 +12,12 @@ resource "aws_acm_certificate" "main" {
     certificate_transparency_logging_preference = var.certificate_transparency_logging_preference
   }
 
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    map(
+      "Name", local.certificate_name
+    )
+  )
 }
 
 data "aws_route53_zone" "main" {
