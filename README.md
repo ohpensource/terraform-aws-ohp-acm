@@ -1,4 +1,4 @@
-# Terraform Module Template
+# Terraform AWS Certificate Manager module
 
 ## Maintainer
 
