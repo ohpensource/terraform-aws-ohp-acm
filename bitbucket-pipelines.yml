@@ -31,6 +31,7 @@ definitions:
           - set -o pipefail
           - |
             # Update version
+            terraform fmt -recursive
             chmod +x .bitbucket/bump.sh
             source .bitbucket/bump.sh
 pipelines:
