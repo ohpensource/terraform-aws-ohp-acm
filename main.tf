@@ -14,8 +14,8 @@ resource "aws_acm_certificate" "main" {
 
   tags = merge(
     var.tags,
-    map(
-      "Name", local.certificate_name
+    tomap(
+      { "Name" = local.certificate_name }
     )
   )
 }
