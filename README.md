@@ -18,6 +18,8 @@ Creates AWS Certificate Manager certificates - does not support importing own ce
 
 ## Usage
 
+Important: the DNS domain must already exist BEFORE trying to create a certificate.
+
 In certain circumstances e.g. Cognito custom DNS, the certificate must be created in a specific region (us-east-1). When this is the case, create a separate provider for the region, as shown below.
 
 ```(terraform)
