@@ -18,6 +18,11 @@ variable "host_name" {
   type        = string
 }
 
+variable "wait_for_validation" {
+  description = "(Optional) Domain validation check will be skipped"
+  default     = false
+}
+
 variable "certificate_transparency_logging_preference" {
   description = "(Optional) Specifies whether certificate details should be added to a certificate transparency log"
   type        = string
