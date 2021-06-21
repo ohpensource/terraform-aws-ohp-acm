@@ -22,15 +22,29 @@ Important: the DNS domain must already exist BEFORE trying to create a certifica
 
 In certain circumstances e.g. Cognito custom DNS, the certificate must be created in a specific region (us-east-1). When this is the case, create a separate provider for the region, as shown below.
 
+### Cognito Example
+
 ```(terraform)
 module "acm" {
-  source = "../terraform-aws-ohp-acm"
+  source = "git@bitbucket.org:ohpen-dev/terraform-aws-ohp-acm.git?ref=v0.1.1"
   providers = {
     aws = aws.us_east_1
   }
 
   domain_name = "infra.dev.ohpen.tech"
   host_name   = "auth"
+  tags        = local.tags
+}
+```
+
+### Non-cognito example
+
+```(terraform)
+module "acm" {
+  source = "git@bitbucket.org:ohpen-dev/terraform-aws-ohp-acm.git?ref=v0.1.1"
+
+  domain_name = "infra.dev.ohpen.tech"
+  host_name   = "my-host"
   tags        = local.tags
 }
 ```
