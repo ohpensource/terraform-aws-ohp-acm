@@ -1,9 +1,9 @@
-name: MS Teams Deploy Card
+name: notify ms teams ci-cd channel
 
 on: [push, pull_request, check_run, release]
 
 jobs:
-  build:
+  notify:
     runs-on: ubuntu-latest
 
     steps:
