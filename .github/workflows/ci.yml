@@ -13,10 +13,10 @@ jobs:
       - name: Terraform Install
         uses: hashicorp/setup-terraform@v1
       - name: tfm-validate
-        run: |
-          chmod +x -R ./scripts
-          ./scripts/tfm_init.sh
-
+        uses: ohpensource/platform-cicd/actions/terraform/tfm-validate@2.3.4.1
+        with:
+          terraform-folder: .
+          use-backend: false
       - name: Lint Terraform
         run: terraform fmt -write=false -list=true -recursive -check
 
